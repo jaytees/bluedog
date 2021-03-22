@@ -1,0 +1,15 @@
+// media queries change the overall font size
+// which effects the rem
+@media (max-width: 700px) {
+  html {
+    font-size: 40%;
+  }
+  .hero {
+    background-position: left 42% center;
+  }
+}
+@media (max-width: 450px) {
+  html {
+    font-size: 25%;
+  }
+}

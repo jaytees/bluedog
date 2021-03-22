@@ -1,0 +1,32 @@
+.hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../assets/render_lightning.png');
+  background-position: left 36% center;
+
+  &__title {
+    margin-top: 19rem;
+    font-size: 8rem;
+    font-weight: $font-regular;
+    letter-spacing: 0.8rem;
+    text-align: center;
+    color: $color-white;
+    @include textGlow;
+  }
+
+  a {
+    align-self: end;
+    padding-bottom: 4rem;
+  }
+  &__arrow {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 10px;
+    fill: $color-white;
+    cursor: pointer;
+    animation: animate-arrow 3s infinite;
+  }
+}

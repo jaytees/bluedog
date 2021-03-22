@@ -1,0 +1,69 @@
+// Mixin for text glow
+// Variables: $blur $opacity
+@mixin textGlow($blur: 10px, $opacity: 0.5) {
+  text-shadow: 0px 0px $blur #fd8414, 0px -3px $blur rgba(253, 132, 20, $opacity),
+    -3px 0px $blur rgba(253, 132, 20, $opacity), 3px 0px $blur rgba(253, 132, 20, $opacity),
+    0px 3px $blur rgba(253, 132, 20, $opacity), 0px 0px $blur rgba(253, 132, 20, $opacity);
+}
+
+// Mixin for Default Switch Styles
+// Variables: $size, $bg
+@mixin toggle-mixin($size: $toggle-default-size, $bg: $color-grey-mid) {
+  padding: 0;
+  position: relative;
+  border: none;
+  height: $size;
+  width: $size * 2;
+  border-radius: $size;
+  background: linear-gradient(to bottom, $bg, $color-grey-dark 25px);
+
+  &:focus,
+  &.focus {
+    &,
+    &.active {
+      outline: none;
+    }
+  }
+
+  &:before,
+  &:after {
+    position: absolute;
+    height: 25%;
+    width: 12.5%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    transition: 0.25s;
+  }
+  &:before {
+    content: '';
+    left: -1rem;
+    background-color: $color-green;
+  }
+  &:after {
+    content: '';
+    right: -2rem;
+    background-color: $bg;
+  }
+
+  > .toggle-switch__handle {
+    position: absolute;
+    top: ($size * 0.25) / 2;
+    left: ($size * 0.25) / 2;
+    width: $size * 0.75;
+    height: $size * 0.75;
+    border-radius: $size * 0.75;
+    transition: left 0.25s;
+    background: $bg;
+  }
+  &.active {
+    > .toggle-switch__handle {
+      left: $size + (($size * 0.25) / 2);
+    }
+    &:before {
+      background-color: $bg;
+    }
+    &:after {
+      background-color: $color-green;
+    }
+  }
+}

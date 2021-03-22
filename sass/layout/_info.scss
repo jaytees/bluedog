@@ -1,0 +1,83 @@
+.info {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+
+  background-image: url('../assets/circuit_board.png');
+  background-position: center;
+  background-size: cover;
+
+  transition: 1s;
+
+  &__content {
+    display: grid;
+    grid-template-rows: 0.2fr 3fr 1fr;
+    width: 65rem;
+    height: 35rem;
+    text-align: center;
+
+    // @include textGlow;
+    @include textGlow($blur: 3px, $opacity: 0.25);
+
+    &-title {
+      // two modes toggle the elements in DOM
+      &--lightMode {
+        display: none;
+      }
+      &--darkMode {
+        display: inline-block;
+      }
+      // unviersal styling regardless of mode
+      font-size: 3rem;
+      font-weight: $font-regular;
+      letter-spacing: 0.2rem;
+
+      &--bold {
+        font-weight: $font-bold;
+      }
+    }
+    &-text {
+      font-size: 2rem;
+      width: 85%;
+      justify-self: center;
+      align-self: center;
+    }
+  }
+
+  &__toggle {
+    position: relative;
+    text-shadow: none;
+
+    .toggle-switch__text {
+      margin-top: 1rem;
+      font-size: 1.5rem;
+      letter-spacing: 0.3rem;
+      font-weight: $font-bold;
+    }
+  }
+}
+
+.toggle-switch {
+  @include toggle-mixin($size: 4rem, $bg: $color-grey-mid);
+}
+
+.lightMode {
+  background-color: $color-white;
+  color: $color-black;
+  background-blend-mode: difference;
+
+  .info {
+    &__content {
+      text-shadow: none;
+
+      &-title {
+        &--bold {
+          color: $color-orange;
+        }
+      }
+    }
+  }
+}
