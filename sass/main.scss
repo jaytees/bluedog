@@ -164,10 +164,10 @@ body {
 
     &-title {
       // two modes toggle the elements in DOM
-      &--light-mode {
+      &--lightMode {
         display: none;
       }
-      &--dark-mode {
+      &--darkMode {
         display: inline-block;
       }
       // unviersal styling regardless of mode

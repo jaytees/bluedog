@@ -106,9 +106,9 @@ body {
       font-size: 3rem;
       font-weight: 400;
       letter-spacing: 0.2rem; }
-      .info__content-title--light-mode {
+      .info__content-title--lightMode {
         display: none; }
-      .info__content-title--dark-mode {
+      .info__content-title--darkMode {
         display: inline-block; }
       .info__content-title--bold {
         font-weight: 700; }
