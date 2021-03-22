@@ -1,35 +1,14 @@
-function Toggle({
-  elementModificationFlag,
-  switchModificationFlag,
-  currentMode,
-  modes,
-  contentTitleClassName,
-  contentTextClassName,
-  switchTextClassName,
-  toggleSwitchClass,
-  contentContainerClass
-}) {
-  this.elementModificationFlag = elementModificationFlag;
-  this.switchModificationFlag = switchModificationFlag;
-  this.currentMode = currentMode;
-  this.modes = modes;
-  this.contentTitleClassName = contentTitleClassName;
-  this.contentTextClassName = contentTextClassName;
-  this.switchTextClassName = switchTextClassName;
-  this.contentStates = {
-    lightMode: {
-      text:
-        'As we shed light on the intricacies of psoriasis pathogenesis, we now know that other proinflammatory cytokines supplement the IL-17/23 axis and charge the immune cells in circulation.',
-      button: 'RESET THE SWITCH'
-    },
-    darkMode: {
-      text:
-        'The complex immunopathogenic mechanisms driving psoriasis involve interactions between keratinocytes and immunecells, overloading the cycle of inflammation that keeps patients plugged into their psoriasis – bound by skin plaques causing clinical symptoms of pain, itching, and burning sensations.',
-      button: 'FLIP THE SWITCH'
-    }
-  };
-  this.toggleSwitch = document.querySelector(toggleSwitchClass);
-  this.elementToToggle = document.querySelector(contentContainerClass);
+function Toggle(paramsObj) {
+  this.elementModificationFlag = paramsObj.elementModificationFlag;
+  this.switchModificationFlag = paramsObj.switchModificationFlag;
+  this.currentMode = paramsObj.currentMode;
+  this.modes = paramsObj.modes;
+  this.contentTitleClassName = paramsObj.contentTitleClassName;
+  this.contentTextClassName = paramsObj.contentTextClassName;
+  this.switchTextClassName = paramsObj.switchTextClassName;
+  this.contentStates = paramsObj.content;
+  this.toggleSwitch = document.querySelector(paramsObj.toggleSwitchClass);
+  this.elementToToggle = document.querySelector(paramsObj.contentContainerClass);
 }
 
 Toggle.prototype.createEventListener = function () {
