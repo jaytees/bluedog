@@ -1,0 +1,300 @@
+$color-white: #fff;
+$color-black: #0b0509;
+$color-grey-primary: #8f8e8f;
+$color-grey-mid: #2d2b2c;
+$color-grey-dark: #151315;
+$color-orange: #fd8414;
+$color-green: #79b900;
+
+$toggle-default-size: 1.5rem;
+
+@mixin textGlow {
+  text-shadow: 0px 0px 10px #fd8414, 0px -3px 10px rgba(253, 132, 20, 0.5), -3px 0px 10px rgba(253, 132, 20, 0.5),
+    3px 0px 10px rgba(253, 132, 20, 0.5), 0px 3px 10px rgba(253, 132, 20, 0.5), 0px 0px 10px rgba(253, 132, 20, 0.5);
+}
+
+/* universal reset */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* global font size */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Almarai', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: $color-grey-primary;
+  background-color: $color-black;
+  // padding: 2rem;
+  // height: 100vh;
+
+  box-sizing: border-box;
+}
+
+.nav {
+  & > * {
+    cursor: pointer;
+  }
+  width: 100%;
+  position: relative;
+  display: grid;
+  place-items: end;
+  height: 7rem;
+  border-bottom: 0.1rem solid $color-grey-mid;
+
+  &__logo {
+    position: absolute;
+    top: 1rem;
+    left: 5vw;
+    height: 5rem;
+  }
+
+  &__links {
+    margin-right: 5vw;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    p {
+      font-size: 1.4rem;
+      transition: 0.5s;
+      &:hover {
+        @include textGlow;
+        color: $color-white;
+      }
+    }
+
+    :not(:last-child) {
+      margin-right: 3rem;
+    }
+  }
+}
+
+@keyframes animate-arrow {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-30px);
+  }
+
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.hero {
+  // border: solid green;
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../assets/render_lightning.png');
+  background-position: left 36% center;
+  // background-position: center;
+  // background-size: cover;
+  // opacity: 0.75;
+
+  &__title {
+    // border: solid blue;
+    // position: absolute;
+    margin-top: 15rem;
+    font-size: 8rem;
+    font-weight: 400;
+    letter-spacing: 0.8rem;
+    text-align: center;
+    color: $color-white;
+    @include textGlow;
+  }
+
+  &__arrow {
+    // position: relative;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 10px;
+    fill: $color-white;
+
+    animation: animate-arrow 3s infinite;
+  }
+}
+
+.info {
+  // border: solid green;
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+
+  background-image: url('../assets/circuit_board.png');
+  background-position: center;
+  background-size: contain;
+
+  transition: 1s;
+
+  &__content {
+    border: solid blue;
+    display: grid;
+    grid-template-rows: 0.2fr 3fr 1fr;
+    // place-items: center;
+    // width: 45vw;
+    // height: 30vh;
+    width: 65rem;
+    height: 35rem;
+    text-align: center;
+    // margin-top: 11rem;
+
+    @include textGlow;
+
+    &-title {
+      // two modes toggle the elements in DOM
+      &--light-mode {
+        display: none;
+      }
+      &--dark-mode {
+        display: inline-block;
+      }
+      // unviersal styling regardless of mode
+      // border: solid green;
+      font-size: 3rem;
+      font-weight: 400;
+      letter-spacing: 0.2rem;
+      // margin-bottom: 3rem;
+
+      &--bold {
+        font-weight: 700;
+      }
+    }
+    &-text {
+      // border: solid yellow;
+      font-size: 2rem;
+      width: 85%;
+      justify-self: center;
+      align-self: center;
+    }
+  }
+
+  &__toggle {
+    position: relative;
+    // border: solid red;
+    text-shadow: none;
+
+    .toggle-switch__text {
+      margin-top: 3rem;
+    }
+  }
+}
+
+.light-mode {
+  background-color: $color-white;
+  color: $color-black;
+
+  .info {
+    &__content {
+      text-shadow: none;
+
+      &-title {
+        &--bold {
+          color: $color-orange;
+        }
+      }
+    }
+  }
+}
+
+// Mixin for Default Switch Styles
+// Variables: $size,
+@mixin toggle-mixin($size: $toggle-default-size, $bg: $color-grey-mid) {
+  padding: 0;
+  position: relative;
+  border: none;
+  height: $size;
+  width: $size * 2;
+  border-radius: $size;
+  background: linear-gradient(to bottom, $bg, $color-grey-dark 25px);
+
+  &:focus,
+  &.focus {
+    &,
+    &.active {
+      outline: none;
+    }
+  }
+
+  &:before,
+  &:after {
+    position: absolute;
+    height: 25%;
+    width: 12.5%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    transition: 0.25s;
+  }
+  &:before {
+    content: '';
+    left: -1rem;
+    background-color: $color-green;
+  }
+  &:after {
+    content: '';
+    right: -2rem;
+    background-color: $bg;
+  }
+
+  > .toggle-switch__handle {
+    position: absolute;
+    top: ($size * 0.25) / 2;
+    left: ($size * 0.25) / 2;
+    width: $size * 0.75;
+    height: $size * 0.75;
+    border-radius: $size * 0.75;
+    transition: left 0.25s;
+    background: $bg;
+  }
+  &.active {
+    > .toggle-switch__handle {
+      left: $size + (($size * 0.25) / 2);
+    }
+    &:before {
+      background-color: $bg;
+    }
+    &:after {
+      background-color: $color-green;
+    }
+  }
+}
+
+.toggle-switch {
+  @include toggle-mixin($size: 4rem, $bg: $color-grey-mid);
+}
+
+@media (max-width: 700px) {
+  html {
+    font-size: 40%;
+  }
+  .hero {
+    background-position: left 42% center;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 25%;
+  }
+}
