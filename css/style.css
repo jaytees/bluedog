@@ -8,7 +8,8 @@
 
 /* global font size */
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  scroll-behavior: smooth; }
 
 body {
   font-family: 'Almarai', sans-serif;
@@ -80,6 +81,7 @@ body {
     vertical-align: top;
     padding: 0 10px;
     fill: #fff;
+    cursor: pointer;
     animation: animate-arrow 3s infinite; }
 
 .info {
@@ -94,7 +96,6 @@ body {
   background-size: contain;
   transition: 1s; }
   .info__content {
-    border: solid blue;
     display: grid;
     grid-template-rows: 0.2fr 3fr 1fr;
     width: 65rem;

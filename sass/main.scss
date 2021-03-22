@@ -25,6 +25,7 @@ $toggle-default-size: 1.5rem;
 /* global font size */
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -128,7 +129,7 @@ body {
     vertical-align: top;
     padding: 0 10px;
     fill: $color-white;
-
+    cursor: pointer;
     animation: animate-arrow 3s infinite;
   }
 }
@@ -149,7 +150,6 @@ body {
   transition: 1s;
 
   &__content {
-    border: solid blue;
     display: grid;
     grid-template-rows: 0.2fr 3fr 1fr;
     // place-items: center;

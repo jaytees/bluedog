@@ -22,33 +22,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (activateLightMode) {
       console.log('change content to light mode');
-      toggleTitleDisplayProperty({ currentMode: '--dark-mode', newMode: '--light-mode' });
-      changeTextContent({ className: '.info__content-text', newText: contentStates.lightMode.text });
-      changeTextContent({ className: '.toggle-switch__text', newText: contentStates.lightMode.button });
+      toggleState('lightMode', contentStates);
     } else {
       console.log('change content to dark mode');
-      toggleTitleDisplayProperty({ currentMode: '--light-mode', newMode: '--dark-mode' });
-      changeTextContent({ className: '.info__content-text', newText: contentStates.darkMode.text });
-      changeTextContent({ className: '.toggle-switch__text', newText: contentStates.darkMode.button });
+      toggleState('darkMode', contentStates);
     }
   });
 });
 
-const toggleState = (newMode, cssFlag) => {
+const toggleState = (newMode, contentStates) => {
   // newMode === darkMode || lightMode for content obj
-  //
-  toggleTitleDisplayProperty({ currentMode: '--light-mode', newMode: '--dark-mode' });
-  changeTextContent({ className: '.info__content-text', newText: contentStates.darkMode.text });
-  changeTextContent({ className: '.toggle-switch__text', newText: contentStates.darkMode.button });
+  const modeClassNames =
+    newMode === 'lightMode'
+      ? { currentModeClassName: '--dark-mode', newModeClassName: '--light-mode' }
+      : { currentModeClassName: '--light-mode', newModeClassName: '--dark-mode' };
+  toggleTitleDisplayProperty(modeClassNames);
+  changeTextContent({ className: '.info__content-text', newText: contentStates[newMode].text });
+  changeTextContent({ className: '.toggle-switch__text', newText: contentStates[newMode].button });
 };
 
 const changeTextContent = ({ className, newText }) => {
   document.querySelector(className).textContent = newText;
 };
 
-const toggleTitleDisplayProperty = ({ currentMode, newMode }) => {
+const toggleTitleDisplayProperty = ({ currentModeClassName, newModeClassName }) => {
+  console.log({ currentModeClassName, newModeClassName });
   // set to display none
-  document.querySelector(`.info__content-title${currentMode}`).style.display = 'none';
+  document.querySelector(`.info__content-title${currentModeClassName}`).style.display = 'none';
   //   set to display inline
-  document.querySelector(`.info__content-title${newMode}`).style.display = 'inline-block';
+  document.querySelector(`.info__content-title${newModeClassName}`).style.display = 'inline-block';
 };
