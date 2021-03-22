@@ -8,12 +8,22 @@ const scrollAnimation = () => {
 
     // for the infoContent
     const infoContent = document.querySelector('.info__content');
-    scrollY >= '400'
+    isElementInViewport(infoContent)
       ? infoContent.classList.add('info__content--animated')
       : infoContent.classList.remove('info__content--animated');
 
     window.lastScroll = scrollY;
   };
+};
+
+const isElementInViewport = (el) => {
+  var rect = el.getBoundingClientRect();
+  return (
+    rect.bottom > 0 &&
+    rect.right > 0 &&
+    rect.left < (window.innerWidth || document.documentElement.clientWidth) &&
+    rect.top < (window.innerHeight || document.documentElement.clientHeight)
+  );
 };
 
 export default scrollAnimation;
