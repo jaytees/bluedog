@@ -37,7 +37,7 @@ const toggle = {
 
 // sets up the event listner and triggers the functionality
 // called on DOM load
-export const create = ({ toggleSwitchClass, contentContainerClass }) => {
+export const createToggle = ({ toggleSwitchClass, contentContainerClass }) => {
   const toggleSwitch = document.querySelector(toggleSwitchClass);
   const elementToToggle = document.querySelector(contentContainerClass);
   toggleSwitch.addEventListener('click', () => {

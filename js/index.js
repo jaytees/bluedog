@@ -1,7 +1,7 @@
-import { create } from './toggle.js';
+import { createToggle } from './toggle.js';
 document.addEventListener('DOMContentLoaded', () => {
   // sets up the event listener and functionality
-  create({
+  createToggle({
     toggleSwitchClass: '.toggle-switch',
     contentContainerClass: '.info'
   });
