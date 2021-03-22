@@ -7,18 +7,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
-    <script src="js/index.js"></script>
+    <script type="module" src="js/toggle.js"></script>
+    <script type="module" src="js/index.js"></script>
     <title>Lights Out - Unplug Psoriasis</title>
   </head>
   <body>
     <nav class="nav">
-      <img src="assets/logo.png" alt="lights out logo" class="nav__logo" />
+      <a href="#homepage">
+        <img src="assets/logo.png" alt="lights out logo" class="nav__logo" />
+      </a>
       <div class="nav__links">
         <p>UNMET NEED</p>
         <p>MECHANISM OF DISEASE</p>
       </div>
     </nav>
-    <section class="hero">
+    <section class="hero" id="homepage">
       <h1 class="hero__title">UNPLUG PSORIASIS</h1>
       <a href="#content"> <img class="hero__arrow" src="assets/arrow.svg" alt="" /></a>
     </section>

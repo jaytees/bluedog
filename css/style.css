@@ -123,12 +123,12 @@ body {
     .info__toggle .toggle-switch__text {
       margin-top: 3rem; }
 
-.light-mode {
+.lightMode {
   background-color: #fff;
   color: #0b0509; }
-  .light-mode .info__content {
+  .lightMode .info__content {
     text-shadow: none; }
-    .light-mode .info__content-title--bold {
+    .lightMode .info__content-title--bold {
       color: #fd8414; }
 
 .toggle-switch {
