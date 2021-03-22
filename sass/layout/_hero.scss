@@ -14,11 +14,6 @@
     letter-spacing: 0.8rem;
     text-align: center;
     color: $color-white;
-    // set to 0 for fade in
-    // opacity: 0;
-    // &--animated {
-    //   @include fadeIn($animationName: 'heroFadeIn');
-    // }
     @include heroTitleGlowAnimation($animationName: heroHeading);
   }
 

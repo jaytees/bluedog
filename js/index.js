@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleSwitchClass: '.toggle-switch',
     contentContainerClass: '.info'
   });
-  document.querySelector('.hero__title').classList.add('hero__title--animated');
   // makes the nav bar appear when user begins to scroll up
   window.onscroll = () => {
     const scrollY = window.pageYOffset || document.documentElement.scrollTop;
@@ -16,10 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollY >= '400'
       ? document.querySelector('.info__content').classList.add('info__content--animated')
       : document.querySelector('.info__content').classList.remove('info__content--animated');
-
-    // scrollY < '400'
-    //   ? document.querySelector('.hero__title').classList.add('hero__title--animated')
-    //   : document.querySelector('.hero__title').classList.remove('hero__title--animated');
 
     window.lastScroll = scrollY;
   };
