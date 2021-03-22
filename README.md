@@ -1,4 +1,4 @@
-# bluedog
+# Bluedog
 
 ## How to start project ##
 
