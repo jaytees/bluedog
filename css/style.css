@@ -31,16 +31,6 @@ body {
   60% {
     transform: translateY(-15px); } }
 
-@media (max-width: 700px) {
-  html {
-    font-size: 40%; }
-  .hero {
-    background-position: left 42% center; } }
-
-@media (max-width: 450px) {
-  html {
-    font-size: 25%; } }
-
 .nav {
   z-index: 100;
   width: 100%;
@@ -81,9 +71,9 @@ body {
   width: 100vw;
   height: 100vh;
   background-image: url("../assets/render_lightning.png");
-  background-position: left 36% center; }
+  background-position: left 36% top 25%; }
   .hero__title {
-    margin-top: 19rem;
+    margin-top: 22rem;
     font-size: 8rem;
     font-weight: 400;
     letter-spacing: 0.8rem;
@@ -276,3 +266,15 @@ body {
     .lightMode .info__content-title--bold {
       color: #fd8414;
       animation: none; }
+
+@media (max-width: 700px) {
+  html {
+    font-size: 40%; }
+  .hero {
+    background-position: left 42% center; } }
+
+@media (max-width: 450px) {
+  html {
+    font-size: 25%; }
+  .hero {
+    background-position: left 42% center; } }
