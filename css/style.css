@@ -209,4 +209,4 @@ body {
     text-shadow: none; }
     .lightMode .info__content-title--bold {
       color: #fd8414;
-      text-shadow: none; }
+      animation: none; }
