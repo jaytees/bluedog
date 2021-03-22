@@ -17,6 +17,7 @@ const toggle = {
       button: 'FLIP THE SWITCH'
     }
   },
+  // handles different stages of the toggle
   toggleState() {
     const newMode = this.modes[this.currentMode];
     this.toggleTitleDisplayProperty(newMode);
@@ -34,6 +35,8 @@ const toggle = {
   }
 };
 
+// sets up the event listner and triggers the functionality
+// called on DOM load
 export const create = ({ toggleSwitchClass, contentContainerClass }) => {
   const toggleSwitch = document.querySelector(toggleSwitchClass);
   const elementToToggle = document.querySelector(contentContainerClass);

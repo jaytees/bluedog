@@ -1,0 +1,22 @@
+// Mixin for text glow
+// Variables: $blur $opacity
+@mixin textGlow($blur: 10px, $opacity: 0.5) {
+  text-shadow: 0px 0px $blur #fd8414, 0px -3px $blur rgba(253, 132, 20, $opacity),
+    -3px 0px $blur rgba(253, 132, 20, $opacity), 3px 0px $blur rgba(253, 132, 20, $opacity),
+    0px 3px $blur rgba(253, 132, 20, $opacity), 0px 0px $blur rgba(253, 132, 20, $opacity);
+}
+
+@mixin textGlowAnimation($animationName, $blurStart: 10px, $opacityStart: 0.5, $blurEnd: 20px, $opacityEnd: 0.25) {
+  -webkit-animation: $animationName 1s ease-in-out infinite alternate;
+  -moz-animation: $animationName 1s ease-in-out infinite alternate;
+  animation: $animationName 1s ease-in-out infinite alternate;
+
+  @keyframes #{$animationName} {
+    from {
+      @include textGlow($blur: $blurStart, $opacity: $opacityStart);
+    }
+    to {
+      @include textGlow($blur: $blurEnd, $opacity: $opacityEnd);
+    }
+  }
+}

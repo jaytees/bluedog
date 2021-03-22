@@ -18,8 +18,6 @@
     width: 65rem;
     height: 35rem;
     text-align: center;
-
-    // @include textGlow;
     @include textGlow($blur: 3px, $opacity: 0.25);
 
     &-title {
@@ -37,6 +35,13 @@
 
       &--bold {
         font-weight: $font-bold;
+        @include textGlowAnimation(
+          $animationName: 'infoHeading',
+          $blurStart: 3px,
+          $opacityStart: 0.25,
+          $blurEnd: 10px,
+          $opacityEnd: 0.1
+        );
       }
     }
     &-text {
@@ -76,6 +81,7 @@
       &-title {
         &--bold {
           color: $color-orange;
+          text-shadow: none;
         }
       }
     }

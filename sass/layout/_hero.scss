@@ -14,7 +14,8 @@
     letter-spacing: 0.8rem;
     text-align: center;
     color: $color-white;
-    @include textGlow;
+    // @include textGlow;
+    @include textGlowAnimation($animationName: heroHeading);
   }
 
   a {
