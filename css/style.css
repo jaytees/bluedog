@@ -89,15 +89,45 @@ body {
     letter-spacing: 0.8rem;
     text-align: center;
     color: #fff;
-    -webkit-animation: heroHeading 1s ease-in-out infinite alternate;
-    -moz-animation: heroHeading 1s ease-in-out infinite alternate;
-    animation: heroHeading 1s ease-in-out infinite alternate; }
+    -webkit-animation: fadeIn ease-in 2s, heroHeading 1s ease-in-out infinite alternate;
+    -moz-animation: fadeIn ease-in 2s, heroHeading 1s ease-in-out infinite alternate;
+    animation: fadeIn ease-in 2s, heroHeading 1s ease-in-out infinite alternate; }
 
 @keyframes heroHeading {
   from {
     text-shadow: 0px 0px 10px #fd8414, 0px -3px 10px rgba(253, 132, 20, 0.5), -3px 0px 10px rgba(253, 132, 20, 0.5), 3px 0px 10px rgba(253, 132, 20, 0.5), 0px 3px 10px rgba(253, 132, 20, 0.5), 0px 0px 10px rgba(253, 132, 20, 0.5); }
   to {
     text-shadow: 0px 0px 20px #fd8414, 0px -3px 20px rgba(253, 132, 20, 0.25), -3px 0px 20px rgba(253, 132, 20, 0.25), 3px 0px 20px rgba(253, 132, 20, 0.25), 0px 3px 20px rgba(253, 132, 20, 0.25), 0px 0px 20px rgba(253, 132, 20, 0.25); } }
+
+@-moz-keyframes heroHeading {
+  from {
+    text-shadow: 0px 0px 10px #fd8414, 0px -3px 10px rgba(253, 132, 20, 0.5), -3px 0px 10px rgba(253, 132, 20, 0.5), 3px 0px 10px rgba(253, 132, 20, 0.5), 0px 3px 10px rgba(253, 132, 20, 0.5), 0px 0px 10px rgba(253, 132, 20, 0.5); }
+  to {
+    text-shadow: 0px 0px 20px #fd8414, 0px -3px 20px rgba(253, 132, 20, 0.25), -3px 0px 20px rgba(253, 132, 20, 0.25), 3px 0px 20px rgba(253, 132, 20, 0.25), 0px 3px 20px rgba(253, 132, 20, 0.25), 0px 0px 20px rgba(253, 132, 20, 0.25); } }
+
+@-webkit-keyframes heroHeading {
+  from {
+    text-shadow: 0px 0px 10px #fd8414, 0px -3px 10px rgba(253, 132, 20, 0.5), -3px 0px 10px rgba(253, 132, 20, 0.5), 3px 0px 10px rgba(253, 132, 20, 0.5), 0px 3px 10px rgba(253, 132, 20, 0.5), 0px 0px 10px rgba(253, 132, 20, 0.5); }
+  to {
+    text-shadow: 0px 0px 20px #fd8414, 0px -3px 20px rgba(253, 132, 20, 0.25), -3px 0px 20px rgba(253, 132, 20, 0.25), 3px 0px 20px rgba(253, 132, 20, 0.25), 0px 3px 20px rgba(253, 132, 20, 0.25), 0px 0px 20px rgba(253, 132, 20, 0.25); } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
   .hero a {
     align-self: end;
     padding-bottom: 4rem; }
@@ -126,6 +156,7 @@ body {
     width: 65rem;
     height: 35rem;
     text-align: center;
+    opacity: 0;
     text-shadow: 0px 0px 3px #fd8414, 0px -3px 3px rgba(253, 132, 20, 0.25), -3px 0px 3px rgba(253, 132, 20, 0.25), 3px 0px 3px rgba(253, 132, 20, 0.25), 0px 3px 3px rgba(253, 132, 20, 0.25), 0px 0px 3px rgba(253, 132, 20, 0.25); }
     .info__content-title {
       font-size: 3rem;
@@ -146,11 +177,46 @@ body {
     text-shadow: 0px 0px 3px #fd8414, 0px -3px 3px rgba(253, 132, 20, 0.25), -3px 0px 3px rgba(253, 132, 20, 0.25), 3px 0px 3px rgba(253, 132, 20, 0.25), 0px 3px 3px rgba(253, 132, 20, 0.25), 0px 0px 3px rgba(253, 132, 20, 0.25); }
   to {
     text-shadow: 0px 0px 10px #fd8414, 0px -3px 10px rgba(253, 132, 20, 0.1), -3px 0px 10px rgba(253, 132, 20, 0.1), 3px 0px 10px rgba(253, 132, 20, 0.1), 0px 3px 10px rgba(253, 132, 20, 0.1), 0px 0px 10px rgba(253, 132, 20, 0.1); } }
+
+@-moz-keyframes infoHeading {
+  from {
+    text-shadow: 0px 0px 3px #fd8414, 0px -3px 3px rgba(253, 132, 20, 0.25), -3px 0px 3px rgba(253, 132, 20, 0.25), 3px 0px 3px rgba(253, 132, 20, 0.25), 0px 3px 3px rgba(253, 132, 20, 0.25), 0px 0px 3px rgba(253, 132, 20, 0.25); }
+  to {
+    text-shadow: 0px 0px 10px #fd8414, 0px -3px 10px rgba(253, 132, 20, 0.1), -3px 0px 10px rgba(253, 132, 20, 0.1), 3px 0px 10px rgba(253, 132, 20, 0.1), 0px 3px 10px rgba(253, 132, 20, 0.1), 0px 0px 10px rgba(253, 132, 20, 0.1); } }
+
+@-webkit-keyframes infoHeading {
+  from {
+    text-shadow: 0px 0px 3px #fd8414, 0px -3px 3px rgba(253, 132, 20, 0.25), -3px 0px 3px rgba(253, 132, 20, 0.25), 3px 0px 3px rgba(253, 132, 20, 0.25), 0px 3px 3px rgba(253, 132, 20, 0.25), 0px 0px 3px rgba(253, 132, 20, 0.25); }
+  to {
+    text-shadow: 0px 0px 10px #fd8414, 0px -3px 10px rgba(253, 132, 20, 0.1), -3px 0px 10px rgba(253, 132, 20, 0.1), 3px 0px 10px rgba(253, 132, 20, 0.1), 0px 3px 10px rgba(253, 132, 20, 0.1), 0px 0px 10px rgba(253, 132, 20, 0.1); } }
     .info__content-text {
       font-size: 2rem;
       width: 85%;
       justify-self: center;
       align-self: center; }
+    .info__content--animated {
+      -webkit-animation: "contentFadeIn" ease-in-out 2s;
+      -moz-animation: "contentFadeIn" ease-in-out 2s;
+      animation: "contentFadeIn" ease-in-out 2s;
+      animation-fill-mode: forwards; }
+
+@keyframes contentFadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@-webkit-keyframes contentFadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@-moz-keyframes contentFadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
   .info__toggle {
     position: relative;
     text-shadow: none; }

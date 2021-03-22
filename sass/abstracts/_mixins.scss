@@ -59,3 +59,35 @@
     }
   }
 }
+
+@mixin fadeIn($animationName) {
+  -webkit-animation: $animationName ease-in-out 2s;
+  -moz-animation: $animationName ease-in-out 2s;
+  animation: $animationName ease-in-out 2s;
+  animation-fill-mode: forwards;
+
+  @keyframes #{$animationName} {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes #{$animationName} {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @-moz-keyframes #{$animationName} {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}

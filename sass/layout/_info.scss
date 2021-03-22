@@ -18,6 +18,9 @@
     width: 65rem;
     height: 35rem;
     text-align: center;
+    // set to 0 for fade in
+    opacity: 0;
+
     @include textGlow($blur: 3px, $opacity: 0.25);
 
     &-title {
@@ -49,6 +52,10 @@
       width: 85%;
       justify-self: center;
       align-self: center;
+    }
+
+    &--animated {
+      @include fadeIn($animationName: 'contentFadeIn');
     }
   }
 

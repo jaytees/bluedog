@@ -19,4 +19,77 @@
       @include textGlow($blur: $blurEnd, $opacity: $opacityEnd);
     }
   }
+  @-moz-keyframes #{$animationName} {
+    from {
+      @include textGlow($blur: $blurStart, $opacity: $opacityStart);
+    }
+    to {
+      @include textGlow($blur: $blurEnd, $opacity: $opacityEnd);
+    }
+  }
+  @-webkit-keyframes #{$animationName} {
+    from {
+      @include textGlow($blur: $blurStart, $opacity: $opacityStart);
+    }
+    to {
+      @include textGlow($blur: $blurEnd, $opacity: $opacityEnd);
+    }
+  }
+}
+
+// added fade in
+@mixin heroTitleGlowAnimation($animationName, $blurStart: 10px, $opacityStart: 0.5, $blurEnd: 20px, $opacityEnd: 0.25) {
+  -webkit-animation: fadeIn ease-in 2s, $animationName 1s ease-in-out infinite alternate;
+  -moz-animation: fadeIn ease-in 2s, $animationName 1s ease-in-out infinite alternate;
+  animation: fadeIn ease-in 2s, $animationName 1s ease-in-out infinite alternate;
+
+  @keyframes #{$animationName} {
+    from {
+      @include textGlow($blur: $blurStart, $opacity: $opacityStart);
+    }
+    to {
+      @include textGlow($blur: $blurEnd, $opacity: $opacityEnd);
+    }
+  }
+  @-moz-keyframes #{$animationName} {
+    from {
+      @include textGlow($blur: $blurStart, $opacity: $opacityStart);
+    }
+    to {
+      @include textGlow($blur: $blurEnd, $opacity: $opacityEnd);
+    }
+  }
+  @-webkit-keyframes #{$animationName} {
+    from {
+      @include textGlow($blur: $blurStart, $opacity: $opacityStart);
+    }
+    to {
+      @include textGlow($blur: $blurEnd, $opacity: $opacityEnd);
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @-moz-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 }
