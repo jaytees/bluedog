@@ -2,5 +2,5 @@
 
 ## How to start project ##
 
-npm install //
-npm run start
+* npm install
+* npm run start
