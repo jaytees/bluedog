@@ -12,9 +12,12 @@ $font-bold: 700;
 
 $toggle-default-size: 1.5rem;
 
-@mixin textGlow {
-  text-shadow: 0px 0px 10px #fd8414, 0px -3px 10px rgba(253, 132, 20, 0.5), -3px 0px 10px rgba(253, 132, 20, 0.5),
-    3px 0px 10px rgba(253, 132, 20, 0.5), 0px 3px 10px rgba(253, 132, 20, 0.5), 0px 0px 10px rgba(253, 132, 20, 0.5);
+// Mixin for text glow
+// Variables: $blur $opacity
+@mixin textGlow($blur: 10px, $opacity: 0.5) {
+  text-shadow: 0px 0px $blur #fd8414, 0px -3px $blur rgba(253, 132, 20, $opacity),
+    -3px 0px $blur rgba(253, 132, 20, $opacity), 3px 0px $blur rgba(253, 132, 20, $opacity),
+    0px 3px $blur rgba(253, 132, 20, $opacity), 0px 0px $blur rgba(253, 132, 20, $opacity);
 }
 
 /* universal reset */
@@ -38,8 +41,6 @@ body {
   line-height: 1.7;
   color: $color-grey-primary;
   background-color: $color-black;
-  // padding: 2rem;
-  // height: 100vh;
 
   box-sizing: border-box;
 }
@@ -161,7 +162,8 @@ body {
     height: 35rem;
     text-align: center;
 
-    @include textGlow;
+    // @include textGlow;
+    @include textGlow($blur: 3px, $opacity: 0.25);
 
     &-title {
       // two modes toggle the elements in DOM
@@ -193,7 +195,7 @@ body {
     text-shadow: none;
 
     .toggle-switch__text {
-      margin-top: 3rem;
+      margin-top: 1rem;
       font-size: 1.5rem;
       letter-spacing: 0.3rem;
       font-weight: $font-bold;
