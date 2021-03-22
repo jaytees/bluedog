@@ -59,7 +59,8 @@
     }
   }
 }
-
+// Mixin for fading content
+// Variables: $animation
 @mixin fadeIn($animationName) {
   -webkit-animation: $animationName ease-in-out 2s;
   -moz-animation: $animationName ease-in-out 2s;

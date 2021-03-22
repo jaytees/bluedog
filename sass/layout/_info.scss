@@ -76,6 +76,8 @@
   @include toggle-mixin($size: 4rem, $bg: $color-grey-mid);
 }
 
+// changes the overal styling of info div
+// added by toggle.js
 .lightMode {
   background-color: $color-white;
   color: $color-black;
