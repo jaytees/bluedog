@@ -6,11 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile:sass": "node-sass sass/main.scss css/style.css -w",
-    "dev:watch": "npm run compile:sass & live-server"
+    "dev:watch": "npm run compile:sass & live-server",
+    "start": "live-server"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "node-sass": "^5.0.0"
+  },
+  "dependencies": {
+    "live-server": "^1.2.1"
   }
 }
