@@ -6,6 +6,10 @@ $color-grey-dark: #151315;
 $color-orange: #fd8414;
 $color-green: #79b900;
 
+$font-light: 300;
+$font-regular: 400;
+$font-bold: 700;
+
 $toggle-default-size: 1.5rem;
 
 @mixin textGlow {
@@ -30,7 +34,7 @@ html {
 
 body {
   font-family: 'Almarai', sans-serif;
-  font-weight: 400;
+  font-weight: $font-regular;
   line-height: 1.7;
   color: $color-grey-primary;
   background-color: $color-black;
@@ -44,12 +48,16 @@ body {
   & > * {
     cursor: pointer;
   }
+  z-index: 100;
   width: 100%;
-  position: relative;
+  position: fixed;
+  top: 0;
   display: grid;
   place-items: end;
   height: 7rem;
   border-bottom: 0.1rem solid $color-grey-mid;
+  background-color: $color-black;
+  opacity: 0.75;
 
   &__logo {
     position: absolute;
@@ -67,10 +75,11 @@ body {
 
     p {
       font-size: 1.4rem;
-      transition: 0.5s;
+
       &:hover {
         @include textGlow;
         color: $color-white;
+        transition: 0.5s;
       }
     }
 
@@ -99,7 +108,6 @@ body {
 }
 
 .hero {
-  // border: solid green;
   position: relative;
   display: grid;
   place-items: center;
@@ -107,24 +115,22 @@ body {
   height: 100vh;
   background-image: url('../assets/render_lightning.png');
   background-position: left 36% center;
-  // background-position: center;
-  // background-size: cover;
-  // opacity: 0.75;
 
   &__title {
-    // border: solid blue;
-    // position: absolute;
-    margin-top: 15rem;
+    margin-top: 19rem;
     font-size: 8rem;
-    font-weight: 400;
+    font-weight: $font-regular;
     letter-spacing: 0.8rem;
     text-align: center;
     color: $color-white;
     @include textGlow;
   }
 
+  a {
+    align-self: end;
+    padding-bottom: 4rem;
+  }
   &__arrow {
-    // position: relative;
     display: inline-block;
     vertical-align: top;
     padding: 0 10px;
@@ -135,7 +141,6 @@ body {
 }
 
 .info {
-  // border: solid green;
   position: relative;
   display: grid;
   place-items: center;
@@ -145,20 +150,16 @@ body {
 
   background-image: url('../assets/circuit_board.png');
   background-position: center;
-  background-size: contain;
+  background-size: cover;
 
   transition: 1s;
 
   &__content {
     display: grid;
     grid-template-rows: 0.2fr 3fr 1fr;
-    // place-items: center;
-    // width: 45vw;
-    // height: 30vh;
     width: 65rem;
     height: 35rem;
     text-align: center;
-    // margin-top: 11rem;
 
     @include textGlow;
 
@@ -171,18 +172,15 @@ body {
         display: inline-block;
       }
       // unviersal styling regardless of mode
-      // border: solid green;
       font-size: 3rem;
-      font-weight: 400;
+      font-weight: $font-regular;
       letter-spacing: 0.2rem;
-      // margin-bottom: 3rem;
 
       &--bold {
-        font-weight: 700;
+        font-weight: $font-bold;
       }
     }
     &-text {
-      // border: solid yellow;
       font-size: 2rem;
       width: 85%;
       justify-self: center;
@@ -192,11 +190,13 @@ body {
 
   &__toggle {
     position: relative;
-    // border: solid red;
     text-shadow: none;
 
     .toggle-switch__text {
       margin-top: 3rem;
+      font-size: 1.5rem;
+      letter-spacing: 0.3rem;
+      font-weight: $font-bold;
     }
   }
 }
@@ -204,6 +204,7 @@ body {
 .lightMode {
   background-color: $color-white;
   color: $color-black;
+  background-blend-mode: difference;
 
   .info {
     &__content {
@@ -219,7 +220,7 @@ body {
 }
 
 // Mixin for Default Switch Styles
-// Variables: $size,
+// Variables: $size, $bg
 @mixin toggle-mixin($size: $toggle-default-size, $bg: $color-grey-mid) {
   padding: 0;
   position: relative;
@@ -284,6 +285,8 @@ body {
   @include toggle-mixin($size: 4rem, $bg: $color-grey-mid);
 }
 
+// media queries change the overall font size
+// which effects the rem
 @media (max-width: 700px) {
   html {
     font-size: 40%;
@@ -292,7 +295,6 @@ body {
     background-position: left 42% center;
   }
 }
-
 @media (max-width: 450px) {
   html {
     font-size: 25%;

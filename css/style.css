@@ -20,12 +20,16 @@ body {
   box-sizing: border-box; }
 
 .nav {
+  z-index: 100;
   width: 100%;
-  position: relative;
+  position: fixed;
+  top: 0;
   display: grid;
   place-items: end;
   height: 7rem;
-  border-bottom: 0.1rem solid #2d2b2c; }
+  border-bottom: 0.1rem solid #2d2b2c;
+  background-color: #0b0509;
+  opacity: 0.75; }
   .nav > * {
     cursor: pointer; }
   .nav__logo {
@@ -40,11 +44,11 @@ body {
     flex-direction: row;
     align-items: center; }
     .nav__links p {
-      font-size: 1.4rem;
-      transition: 0.5s; }
+      font-size: 1.4rem; }
       .nav__links p:hover {
         text-shadow: 0px 0px 10px #fd8414, 0px -3px 10px rgba(253, 132, 20, 0.5), -3px 0px 10px rgba(253, 132, 20, 0.5), 3px 0px 10px rgba(253, 132, 20, 0.5), 0px 3px 10px rgba(253, 132, 20, 0.5), 0px 0px 10px rgba(253, 132, 20, 0.5);
-        color: #fff; }
+        color: #fff;
+        transition: 0.5s; }
     .nav__links :not(:last-child) {
       margin-right: 3rem; }
 
@@ -69,13 +73,16 @@ body {
   background-image: url("../assets/render_lightning.png");
   background-position: left 36% center; }
   .hero__title {
-    margin-top: 15rem;
+    margin-top: 19rem;
     font-size: 8rem;
     font-weight: 400;
     letter-spacing: 0.8rem;
     text-align: center;
     color: #fff;
     text-shadow: 0px 0px 10px #fd8414, 0px -3px 10px rgba(253, 132, 20, 0.5), -3px 0px 10px rgba(253, 132, 20, 0.5), 3px 0px 10px rgba(253, 132, 20, 0.5), 0px 3px 10px rgba(253, 132, 20, 0.5), 0px 0px 10px rgba(253, 132, 20, 0.5); }
+  .hero a {
+    align-self: end;
+    padding-bottom: 4rem; }
   .hero__arrow {
     display: inline-block;
     vertical-align: top;
@@ -93,7 +100,7 @@ body {
   color: white;
   background-image: url("../assets/circuit_board.png");
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   transition: 1s; }
   .info__content {
     display: grid;
@@ -121,11 +128,15 @@ body {
     position: relative;
     text-shadow: none; }
     .info__toggle .toggle-switch__text {
-      margin-top: 3rem; }
+      margin-top: 3rem;
+      font-size: 1.5rem;
+      letter-spacing: 0.3rem;
+      font-weight: 700; }
 
 .lightMode {
   background-color: #fff;
-  color: #0b0509; }
+  color: #0b0509;
+  background-blend-mode: difference; }
   .lightMode .info__content {
     text-shadow: none; }
     .lightMode .info__content-title--bold {
